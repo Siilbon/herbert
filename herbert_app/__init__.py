@@ -10,7 +10,7 @@ def create_app():
     db_server = 'database-1.czlutn2hktjl.us-west-2.rds.amazonaws.com'
     db_port = 5432
     db_user = 'postgres'
-    db_pw = os.environ['herbert_db_pw']
+    db_pw = os.environ['HERBERT_DB_PW']
     db_db = 'TestDB'
 
     app.config[
