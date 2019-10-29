@@ -1,0 +1,100 @@
+{% extends "shared/_layout.html" %}
+{% block main_content %}
+
+<section id="herbert" class="jumbotron home_section d-flex align-items-start">
+
+    <div class="container bg-transparent rounded mx-5">
+        <div class="display-4 mb-5">Herbal Medicine Search</div>
+        <p class="text-dark">Search by herb name or medical condition</p>
+        <div class="input-group mb-5">
+            <input type="text" class="form-control" placeholder="{{ example }}" />
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button">Search</button>
+            </div>
+        </div>
+
+        {% if common_herbs %}
+        <div class="text-dark small">
+            <p>Common Herbs:
+                {% for herb in common_herbs %}
+                <a class="px-1 text-dark" style="text-decoration: underline;" href="search/{{ herb }}">{{ herb }}</a>
+                {% endfor %}
+            </p>
+        </div>
+        {% endif %}
+
+        {% if common_conditions %}
+        <div class="text-dark small">
+            <p>Common Conditions:
+                {% for condition in common_conditions %}
+                <a class="px-1 text-dark" style="text-decoration: underline;"
+                    href="search/{{ condition }}">{{ condition }}</a>
+                {% endfor %}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+</section>
+
+<section id="team" class="home_section bg-light mb-5">
+    <div class="container">
+        <div class="display-4">Team</div>
+        <div class="row">
+            {% for member in team %}
+            <div class="col-sm-3">
+                <div class="card">
+                    <img class="card-img-top" src="static/img/team/{{member.image}}">
+                    <div class="card-body">
+                        <div class="card-title">{{member.name}}</div>
+                        <p class="card-text">{{member.role}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+<section id="about" class="home_section bg-success text-light">
+    <div class="container">
+        <div class="display-4 mb-5">About</div>
+
+
+        <div class="font-weight-bold mb-3">Describe the problem you are solving. </div>
+
+        <div class="font-weight-light mb-3">
+            Alternative medicine is of growing interest internationally to patients [1,2,4,5,7,17] The problem we
+            aim to solve is the lack of centralization over alternative medicine knowledge and ability to search for
+            it by the average user [1,2]. In particular we aim to centralize information around treatment, usage,
+            and other aspects of Traditional Chinese Medicine. Our team interviewed around 10 consumers, TCM
+            practitioners, western doctors and pharmacists and found that most of them don’t have the details of the
+            herbal products and its interactions with western medicine. Even though there are websites, blogs and
+            tools that talk about herbal medicines, users have to spend a lot of time to sift through the search
+            results to find the right information [1,2,4]. An NBC news report found that “80 percent of Internet
+            users, or about 93 million Americans, have searched for a health-related topic online” with alternative
+            medicine accounting for about a third of the search topics [1]. Moreover, with the top/first result +
+            description being the top influencers for consulting online [2,4], it becomes imperative to deliver the
+            relevant and correct information to the average patient. We propose to build a vertical semantic search
+            engine for herbal products which provide contextual answer to user queries about TCM herbs.
+        </div>
+
+        <div class="font-weight-bold mb-3">Why is this a compelling and impactful problem to solve? Why is this a
+            big opportunity?</div>
+
+        <div class="font-weight-light mb-3">
+            Taking a step back and zooming out, this problem isn’t just national but international as there is
+            evidently little to no consideration for the dual “western” medication practices combined with
+            traditional/alternative medication practices [12,13,18]. The global prevalence [10,12,14] is showcased
+            by market demand as the Global Herbal Supplements market accounted for $49.1 billion in 2016 and is
+            expected to reach $86.7 billion by 2022 [17]. Moreover in particular to search, this opportunity is big
+            in terms of having a wide set of users as well as being the third most pertinent use case for the
+            internet for the average user [1].
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

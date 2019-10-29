@@ -1,0 +1,15 @@
+{% extends "shared/_layout.html" %}
+
+{% block title %}
+Herbert - Contact Us
+{% endblock%}
+
+{% block main_content %}
+<section class="section home_section">
+    <div class="container bg-transparent rounded mx-5">
+        {% for member in team %}
+        <p>{{ member.name}}: {{member.email}}</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
