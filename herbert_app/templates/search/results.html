@@ -1,9 +1,55 @@
 {% extends "/shared/_layout.html" %}
 
+{% block title %}Herbert - Semantic Search Engine for Herbal Medicines{% endblock %}
+
 {% block main_content %}
-<section class="section home_section">
-    <div class="container bg-transparent rounded mx-5">
-        {{ search_term }}
+<section id="main-container" class="container-fluid jumbotron">
+
+  <div class="row">
+    <div class="col">
+      25 results found
     </div>
+  </div>
+
+  <div class="row">
+    <div id="column1" class="col-md-3 mx-3">
+
+      <div class="card mx-2 mb-2">
+        <div class="card-body">
+          <a href="#" class="h5 card-title text-dark">Ginger</a>
+          <p class="card-text small">Studies have shown that ginger can be a effective treatment for <b>stomach
+              upset</b>...</p>
+        </div>
+      </div>
+    </div>
+
+    <article id="column2" class="col-md-8 mr-5">
+      <h1>{{ first_result_herb }}</h1>
+      <p>Ginger is an herbal supplement, which can be used as a natural remedy in treatment of antiemetic,
+        carminative,
+        stimulant and also as an anti-inflammatory. It can be effective in treatment of dyspepsia, migraine headache,
+        morning sickness, nausea (chemo induced), post-operative nausea and/or vomiting, osteoarthritis, respiratory
+        infections, rheumatoid arthritis and for SSRI taper/discontinuation.
+        <p />
+        Demonstrated antiemetic efficacy in pregnancy, postoperative nausea and vomiting and vertigo. It is possibly
+        ineffective for motion sickness.
+        <p />
+        Insufficient reliable data to rate use in chemotherapy induced nausea and vomiting, migraine headache,
+        osteoarthritis and rheumatoid arthritis
+        <p />
+        Ginger is available under the following different brand names: African ginger, black ginger, cochin ginger,
+        Imber, Jamaica ginger, race ginger, rhizoma zingerberis, rhizome, sheng jiang, Shokyo, zingibain, Zingiber
+        officinale, and Zingiberis.</p>
+
+      <h2>Side Effects</h2>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          increased bleeding tendency
+          <span class="badge badge-primary badge-pill">14</span>
+        </li>
+
+      </ul>
+    </article>
+  </div>
 </section>
 {% endblock %}

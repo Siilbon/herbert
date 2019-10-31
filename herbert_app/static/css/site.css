@@ -18,3 +18,30 @@ section:nth-child(even) {
 #herbert {
     background-image: url("../img/background/home.png");
 }
+
+/* #top-container {
+    height: 260px;
+    padding-top:75px;
+    
+    background-image: url("img/banner.png");
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+} */
+
+/* #column1 {
+    height: calc(100% - 300px);
+    position:fixed;
+    top:300px;
+    overflow: scroll;
+}
+#column2 {
+    height: calc(100% - 300px);
+    position:fixed;
+    top:300px;
+    right:0px;
+    overflow: scroll;}
+
+.mx-6 {
+  margin-right: 5rem !important;
+} */
