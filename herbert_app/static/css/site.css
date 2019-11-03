@@ -19,6 +19,14 @@ section:nth-child(even) {
     background-image: url("../img/background/home.png");
 }
 
+#result_banner {
+    background-image: url("../img/background/banner.png");
+    background-position: 30%;
+    height: 125px;
+    width: 100%;
+    padding: 0%;
+}
+
 /* #top-container {
     height: 260px;
     padding-top:75px;

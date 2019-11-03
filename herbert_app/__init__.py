@@ -1,8 +1,9 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.engine import reflection
+# from sqlalchemy.engine import reflection
 
+db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
@@ -18,7 +19,10 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {}
 
-    db = SQLAlchemy(app)
+    db.init_app(app)
+
+    from .views import herb_views
+    app.register_blueprint(herb_views.bp)
 
     from .views import home_views
     app.register_blueprint(home_views.bp)
